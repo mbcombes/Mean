@@ -1,0 +1,35 @@
+<div class="container">
+  <h2>Know of a pet needing a home?</h2>
+  <form class="form-group border p-5">
+    <label for="name">Pet Name:</label>
+    <p class="text-danger" *ngIf="errors['name']">{{ errors.name.message}}</p>
+    <input class="form-control" type="text" name="NewPet.name" id="name" [(ngModel)]="NewPet.name">
+    <label for="typ">Pet Type:</label>
+    <p class="text-danger" *ngIf="errors['type']">{{ errors.type.message}}</p>
+    <input class="form-control" type="text" name="NewPet.type" id="type" [(ngModel)]="NewPet.type">
+    <label for="description">Description:</label>
+    <p class="text-danger" *ngIf="errors['description']">{{ errors.description.message}}</p>
+    <input class="form-control" type="text" name="NewPet.description" id="description" [(ngModel)]="NewPet.description">
+    <label>Skills:</label>
+    <ul>
+      <li class="list-unstyled">
+        <label for="skill1">SKill 1:</label>
+        <p class="text-danger" *ngIf="errors['skill1']">{{ errors.skill1.message}}</p>
+        <input class="form-control" type="text" name="NewPet.skill1" id="skill1" [(ngModel)]="NewPet.skill1">
+      </li>
+      <li class="list-unstyled">
+        <label for="skill2">SKill 2:</label>
+        <p class="text-danger" *ngIf="errors['skill2']">{{ errors.skill2.message}}</p>
+        <input class="form-control" type="text" name="NewPet.skill2" id="skill2" [(ngModel)]="NewPet.skill2">
+      </li>
+      <li class="list-unstyled">
+        <label for="skill3">SKill 3:</label>
+        <p class="text-danger" *ngIf="errors['skill3']">{{ errors.skill3.message}}</p>
+        <input class="form-control" type="text" name="NewPet.skill3" id="skill3" [(ngModel)]="NewPet.skill3">
+      </li>
+    </ul>
+    <button class="btn btn-primary" (click)="postPetFromService()">Add pet</button>
+    <button class="btn btn-danger ml-3" [routerLink]="['/pets']">Cancel</button>
+  </form>
+
+</div>

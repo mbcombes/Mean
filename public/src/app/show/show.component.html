@@ -1,0 +1,18 @@
+<div class="container" *ngIf="onePet[0]">
+    <h2>Details about {{ onePet[0].name }}</h2>
+    <ul class="list-unstyled">
+        <li><span class="font-weight-bold">Pet Type:</span> {{ onePet[0].type }} </li>
+        <li><span class="font-weight-bold">Description:</span> {{ onePet[0].description }} </li>
+        <li><span class="font-weight-bold">Skills:</span>
+            <ul *ngIf="onePet[0]">
+                <li *ngIf="onePet[0].skill1" class="list-unstyled">{{ onePet[0].skill1 }} </li>
+                <li *ngIf="onePet[0].skill2" class="list-unstyled">{{ onePet[0].skill2 }}</li>
+                <li *ngIf="onePet[0].skill3" class="list-unstyled">{{ onePet[0].skill3 }}</li>
+            </ul>
+        </li>
+        <li><span class="font-weight-bold">Likes:</span> {{onePet[0].likes }} </li>
+    </ul>
+    <button *ngIf="disabled" class="btn btn-primary" (click)="addLike()">Like this pet!</button>
+    <button class="btn btn-primary ml-3" (click)="deletePet()">Adopt this pet!</button>
+    <button class="btn btn-primary ml-3" [routerLink]="['/pets']"> Home </button>
+</div>
